@@ -6,14 +6,14 @@
 
 tasks:
   - name : Setup variables
-    init: |
+    init: 
       sdk install java 23-open
       sdk default java 23-open
 
       sdk install gradle 8.11.1
       sdk default gradle 8.11.1
       chmod 755 gradlew
-    #./gradlew build
+      ./gradlew build
   
 
 
