@@ -4,16 +4,15 @@
 
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
-tasks:
-  - name : Setup variables
-    init: 
-      sdk install java 23-open
-      sdk default java 23-open
-
-      sdk install gradle 8.11.1
-      sdk default gradle 8.11.1
-      chmod 755 gradlew
-      ./gradlew build
+  tasks:
+    - name: Setup Java and Gradle
+      init: |
+        sdk install java 23-open
+        sdk default java 23-open
+        sdk install gradle 8.12
+        sdk default gradle 8.12
+      command: |
+        ./gradlew build
   
 
 
