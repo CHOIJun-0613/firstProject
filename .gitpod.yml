@@ -5,14 +5,25 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
   tasks:
+    - name: Timezone
+      init: |
+        sudo apt update
+        sudo apt install -y tzdata
+        sudo ln -sf /usr/share/zoneinfo/Asia/Seout /etc/localtime
+      command: |
+        date
     - name: Setup Java and Gradle
       init: |
-        sdk install java 23-open
+        sdk install java 23-open << EOF
         sdk default java 23-open
-        sdk install gradle 8.12
+        sdk install gradle 8.12 << EOF
         sdk default gradle 8.12
       command: |
-        ./gradlew build
+        sdk current       
+  vscode:
+    extensions:
+      - VMware.vscode-spring-boot
+      - vscjava.vscode-java-pack
   
 
 
