@@ -9,7 +9,7 @@
       init: |
         sudo apt update
         sudo apt install -y tzdata
-        sudo ln -sf /usr/share/zoneinfo/Asia/Seout /etc/localtime
+        sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
       command: |
         date
     - name: Setup Java and Gradle
